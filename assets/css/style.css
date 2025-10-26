@@ -9,10 +9,9 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #a8c66c 0%, #b6d17d 100%);
-    color: #fff;
-    text-align: center;
-    padding: 100px 20px;
+    background: linear-gradient(120deg, #a8c66c 60%, #d9e6bf 100%);
+    color: white;
+    padding: 80px 20px;
     position: relative;
     overflow: hidden;
 }
@@ -29,7 +28,23 @@ body {
     pointer-events: none;
 }
 
-.hero img {
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Bên trái */
+.hero-left {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-left img {
     width: 130px;
     height: 130px;
     object-fit: cover;
@@ -39,17 +54,85 @@ body {
     margin-bottom: 20px;
 }
 
-.hero h1 {
+.hero-left h1 {
     font-size: 3rem;
     font-weight: 700;
     letter-spacing: 1px;
 }
 
-.hero p {
+.hero-left p {
     font-size: 1.25rem;
     margin-top: 10px;
     opacity: 0.9;
 }
+
+/* Bên phải */
+.hero-right {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    max-height: 60vh;
+    overflow-y: auto;
+    /* thêm dòng này */
+    scrollbar-width: thin;
+    /* cho Firefox */
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+    /* màu scrollbar nhẹ */
+}
+
+/* cho Chrome, Edge */
+.hero-right::-webkit-scrollbar {
+    width: 6px;
+}
+
+.hero-right::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 3px;
+}
+
+.hero-right::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.more-text {
+    display: none;
+}
+
+.read-more-btn {
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-right {
+        max-height: 180px;
+    }
+}
+
 
 /* Menu Section */
 .menu-section {
@@ -161,4 +244,175 @@ footer {
     padding: 12px 0;
     font-size: 0.9rem;
     letter-spacing: 0.3px;
+}
+
+/* Preservation Section */
+.preserve-feedback-section {
+    background-color: #f3f8ec;
+    color: #333;
+    border-top: 2px solid #a8c66c;
+    border-bottom: 2px solid #a8c66c;
+}
+
+.preserve-feedback-section .section-title {
+    color: #8ead55;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.preserve-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.preserve-list li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.preserve-note {
+    font-style: italic;
+    color: #5d7b36;
+    font-size: 1rem;
+}
+
+.carousel-inner img {
+    height: 320px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(60%) sepia(25%) saturate(300%) hue-rotate(45deg);
+}
+
+.feedback-header h2 {
+    color: #6a8c3e;
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+}
+
+.text-heart {
+    color: #e63946;
+    font-size: 1.9rem;
+    animation: heartbeat 1.2s infinite;
+}
+
+/* Nhịp tim nhẹ */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.2);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ============================= */
+/* 📱 RESPONSIVE TUNING FOR MOBILE */
+/* ============================= */
+
+/* Nhỏ hơn tablet (dưới 992px) */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+        min-height: auto;
+    }
+
+    .hero-left,
+    .hero-right {
+        flex: none;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .hero-right {
+        margin-top: 20px;
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Điện thoại nhỏ (dưới 576px) */
+@media (max-width: 576px) {
+    body {
+        font-size: 14px;
+    }
+
+    .menu-section {
+        padding: 40px 10px;
+    }
+
+    .carousel-item img {
+        height: 180px;
+    }
+
+    .menu-item h5 {
+        font-size: 1rem;
+    }
+
+    .contact {
+        padding: 40px 10px;
+    }
+
+    .chat-buttons {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .chat-buttons a {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+/* ============================= */
+/* Tablet dọc (768px) tinh chỉnh nhẹ */
+/* ============================= */
+@media (max-width: 768px) {
+
+    .menu-section h2,
+    .contact h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
 }
