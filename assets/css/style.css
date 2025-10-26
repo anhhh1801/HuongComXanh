@@ -1,0 +1,164 @@
+/* Tổng thể */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #faf8f5;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #a8c66c 0%, #b6d17d 100%);
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/bg-texture.png');
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.hero img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* Menu Section */
+.menu-section {
+    padding: 70px 0;
+    text-align: center;
+}
+
+.menu-section h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #6b8e23;
+}
+
+.menu-item {
+    margin-bottom: 40px;
+}
+
+.menu-item h5 {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #444;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.carousel-item img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact Section */
+.contact {
+    background-color: #a8c66c;
+    color: white;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.6rem;
+    margin: 0 12px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.social-icons a:hover {
+    opacity: 0.85;
+    transform: scale(1.2);
+}
+
+/* Floating chat buttons */
+.chat-buttons {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.chat-buttons a {
+    background-color: #a8c66c;
+    color: white;
+    font-size: 1.6rem;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+.chat-buttons a:hover {
+    background-color: #91b45b;
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background-color: #8ead55;
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+}
